@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<Context>
+
+    <!-- url="jdbc:oracle:thin:@localhost:1521/seoul" -->
+    
+    <!-- maxActive deprecared -->
+    <!-- <Resource 
+        name="jdbc/OracleLocalDB" 
+        auth="Container"
+        type="javax.sql.DataSource"
+        username="scott"
+        password="oracle"
+        driverClassName="oracle.jdbc.OracleDriver"
+        url="jdbc:oracle:thin:@seoul?TNS_ADMIN=C:/u01/oracle/product/19.3.0/dbhome/network/admin"
+        maxTotal="8"
+        maxIdle="2"
+        loginTimeout="1"
+    /> -->
+    
+    
+    <!-- maxActive deprecared -->
+    <Resource
+        name="jdbc/OracleCloud" 
+        auth="Container"
+        type="javax.sql.DataSource"
+        username="SCOTT"
+        password="Oracle12345!!!"
+        driverClassName="oracle.jdbc.OracleDriver"
+        url="jdbc:oracle:thin:@db202106301639_high?TNS_ADMIN=/Users/jinsung/Desktop/opt/OracleCloudWallet/ATP"
+        maxTotal="8"
+        maxIdle="2"
+        loginTimeout="1"
+    />
+    
+
+    <!-- maxActive deprecared -->
+    <Resource 
+        name="jdbc/OracleCloudWithLog4jdbc" 
+        auth="Container"
+        type="javax.sql.DataSource"
+        username="SCOTT"
+        password="Oracle12345!!!"
+        driverClassName="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
+        url="jdbc:log4jdbc:oracle:thin:@db202106301639_high?TNS_ADMIN=/Users/jinsung/Desktop/opt/OracleCloudWallet/ATP"
+        maxTotal="8"
+        maxIdle="2"
+        loginTimeout="1"
+    /> 
+
+</Context>    

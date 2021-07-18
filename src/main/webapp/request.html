@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>request.html</title>
+</head>
+<body>
+    <h1>FrontController 패턴 실습</h1>
+
+
+    <a href="select.do">조회하기</a><br>
+	<br>
+	
+	<form action="delete.do" method="GET">
+        <input type="text" name="empno">
+        <input type="submit" value="데이터 존나삭제해버리기">
+    </form>
+
+    <hr>
+	<form action="insert.do" method="GET">
+        <label for="empno">사번empno</label>
+        <input type="text" name="empno">
+
+        <br>
+
+
+        <label for="ename">이름emane</label>
+        <input type="text" name="ename">
+
+        <br>
+        
+        <label for="sal">급여sal</label>
+        <input type="text" name="sal">
+
+        <br>
+
+        <label for="deptno">부서번호deptno</label>
+        <input type="text" name="deptno">
+
+        <br>
+
+        <input type="submit" value="데이터 존나입력해버리기">
+    </form>
+
+
+    <br>
+    <form action="update.do" method="GET">
+
+
+        <label for="empno">사번empno</label>
+        <input type="text" name="empno">
+
+        <label for="deptno">부서번호deptno</label>
+        <input type="text" name="deptno">
+
+        <input type="submit" value="부서번호 수정존나해버리기">
+    </form>
+
+</body>
+</html>
