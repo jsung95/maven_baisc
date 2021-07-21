@@ -98,14 +98,15 @@ public class FrontControllerServlet extends HttpServlet {
 				dto1.setDeptno(Integer.parseInt(deptno1));
 				
 				InsertService insertServlet = new InsertService();
-				boolean isSuccess1 = insertServlet.execute(dto1);
-				
-				if(isSuccess1) {
-					log.info("입력성공");
-				} else {
-					log.info("입력실패");
-				}
-				
+				insertServlet.execute(dto1);
+//				boolean isSuccess1 = insertServlet.execute(dto1);
+//				
+//				if(isSuccess1) {
+//					log.info("입력성공");
+//				} else {
+//					log.info("입력실패");
+//				}
+//				
 				req.setAttribute("__EMPINSERT__", dto1);
 				
 				RequestDispatcher dispatcher1 = req.getRequestDispatcher("/WEB-INF/createResponse.jsp");
@@ -116,11 +117,13 @@ public class FrontControllerServlet extends HttpServlet {
 				break;
 			case "/delete.do": //삭제요청 
 				log.info("\t+ command : " + requestURI);
-				DeleteService deleteService = new DeleteService();
-				EmpDTO dto = new EmpDTO();
+
 				String empno = req.getParameter("empno");
+				
+				EmpDTO dto = new EmpDTO();
 				dto.setEmpno(Integer.parseInt(empno));
 				
+				DeleteService deleteService = new DeleteService();
 				boolean isSuccess = deleteService.execute(dto);
 				
 				if(isSuccess) {

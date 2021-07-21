@@ -181,14 +181,14 @@ public class TTTServlet extends HttpServlet {
 			
 			
 			//Request Scope 공유영역 Model, DTO, 그 외 모든 필요한 데이터를 속성 바인딩 
-			req.setAttribute("MODEL", 1);
-			req.setAttribute("DTO", 2);
-			req.setAttribute("ETC", 3);
-			
-			RequestDispatcher dispatcher = 
-					req.getRequestDispatcher("/WEB-INF/createResponse.jsp");
-			
-			dispatcher.forward(req, res);
+//			req.setAttribute("MODEL", 1);
+//			req.setAttribute("DTO", 2);
+//			req.setAttribute("ETC", 3);
+//			
+//			RequestDispatcher dispatcher = 
+//					req.getRequestDispatcher("/WEB-INF/createResponse.jsp");
+//			
+//			dispatcher.forward(req, res);
 			
 			//Forwarding과 Redirect는 동시에 진행될 수 없다. 
 			
@@ -196,8 +196,10 @@ public class TTTServlet extends HttpServlet {
 			// Redirect : HttpServlerResponse 객체의 메소드 이용 
 			//---------------------------------------------//
 			
-			
-//			res.sendRedirect("http://www.naver.com");
+			//302 상태코드를 달고있는 응답문서를 자동생성해서, 웹브라우저로 전송하는 메소드
+			//302 상태코드를 받은 웹브라우저는, 그 즉시, 지정한 URL로 다시 요청을 만들어 전송(사용자 개입없이, 자동으로)
+			// URL주소창에 주소가 완전히 변한다!!! ----> 이전 요청과는 완전히 다른(분리된) 상태이기 때문에 ...이전요청의 행위를 반복할 수가 없다.
+			res.sendRedirect("https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=hello");
 			
 		} catch (Exception e) {
 			throw new IOException(e);

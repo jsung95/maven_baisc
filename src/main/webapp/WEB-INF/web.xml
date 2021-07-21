@@ -26,6 +26,11 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 
+  <!-- Session config -->
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+
   <!-- 컨텍스트 파라미터 설정 -->
 
   <context-param>

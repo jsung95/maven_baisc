@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Form</title>
+</head>
+<body>
+    <h1>FileUpload 실습</h1>
+    <form action="/Upload" method="POST" enctype="multipart/form-data">
+        작성자<input type="text" name="theAuthor"><br>
+		age<input type="text" name="age"><br>
+        파일<input type="file" name="theFile" multiple><br>
+        <p></p>
+        <input type="submit" value="upload">
+    </form>
+</body>
+</html>
